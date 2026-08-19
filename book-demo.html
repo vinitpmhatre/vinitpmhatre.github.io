@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Book a ClinicVoice demo for your clinic.">
+<title>Book a Demo — ClinicVoice</title>
+<style>
+:root{--ink:#10233f;--muted:#64748b;--brand:#2563eb;--bg:#f7faff;--card:#fff;--line:#e2e8f0;--good:#15803d;--bad:#b91c1c}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(135deg,#eff6ff,#fff 55%)}a{text-decoration:none;color:inherit}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;background:#fff;border-bottom:1px solid var(--line)}.logo{font-size:24px;font-weight:800}.logo span{color:var(--brand)}.back{color:var(--muted);font-size:14px}.wrap{max-width:920px;margin:60px auto;padding:0 20px;display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:start}.intro h1{font-size:48px;line-height:1.05;letter-spacing:-2px;margin:0 0 16px}.intro h1 span{color:var(--brand)}.intro p{color:var(--muted);font-size:17px;line-height:1.7}.points{display:grid;gap:12px;margin-top:28px}.point{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.point strong{display:block}.point small{color:var(--muted)}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 24px 70px rgba(28,67,120,.10)}form{display:grid;gap:15px}label{font-size:13px;font-weight:700}input,select,textarea{display:block;width:100%;margin-top:7px;padding:12px 13px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;color:var(--ink);background:#fff}textarea{min-height:100px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.submit{border:0;background:var(--brand);color:#fff;padding:13px 18px;border-radius:10px;font-weight:800;cursor:pointer;font-size:15px}.submit:disabled{opacity:.65;cursor:wait}.note{font-size:12px;color:var(--muted)}.message{display:none;padding:12px;border-radius:10px;font-size:13px}.success{background:#dcfce7;color:var(--good)}.error{background:#fee2e2;color:var(--bad)}@media(max-width:760px){.wrap{grid-template-columns:1fr;margin:35px auto}.intro h1{font-size:40px}.row{grid-template-columns:1fr}.nav{padding:0 20px}}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="logo" href="index.html">Clinic<span>Voice</span></a><a class="back" href="index.html">← Back to website</a></nav>
+<main class="wrap">
+<section class="intro"><h1>See ClinicVoice <span>in action.</span></h1><p>Tell us a little about your clinic. We'll use this information to tailor a product demo around your call volume, appointment workflow and patient communication.</p><div class="points"><div class="point">📞 <strong>AI receptionist</strong><small>Handle routine patient calls 24/7.</small></div><div class="point">📅 <strong>Appointment automation</strong><small>Capture and organize booking requests.</small></div><div class="point">💬 <strong>Patient follow-up</strong><small>Confirmations and reminders in one workflow.</small></div></div></section>
+<section class="card"><h2 style="margin:0 0 6px">Book a demo</h2><p style="margin:0 0 20px;color:var(--muted);font-size:14px">Usually takes less than 2 minutes.</p>
+<div id="success" class="message success">Thanks — your demo request was submitted. We'll contact you soon.</div><div id="error" class="message error">We couldn't submit the request yet. Please try again in a moment.</div>
+<form id="demoForm">
+<div class="row"><label>Clinic name<input name="clinic_name" required placeholder="Sunrise Family Clinic"></label><label>Your name<input name="contact_name" required placeholder="Dr. Priya Shah"></label></div>
+<div class="row"><label>Email<input name="email" type="email" required placeholder="you@clinic.com"></label><label>Phone<input name="phone" type="tel" placeholder="+91 98xxxxxxx"></label></div>
+<div class="row"><label>City<input name="city" placeholder="Mumbai"></label><label>Clinic size<select name="clinic_size"><option value="solo">Solo practitioner</option><option value="small">2–5 doctors</option><option value="medium">6–15 doctors</option><option value="large">16+ doctors</option></select></label></div>
+<label>What would you like ClinicVoice to help with?<textarea name="message" placeholder="e.g. missed calls, appointment booking, WhatsApp reminders..."></textarea></label>
+<button class="submit" id="submitBtn" type="submit">Request my demo →</button><div class="note">Your details are used only to respond to this demo request.</div>
+</form></section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script>
+<script>
+const form=document.getElementById('demoForm'),btn=document.getElementById('submitBtn'),success=document.getElementById('success'),error=document.getElementById('error');
+form.addEventListener('submit',async e=>{e.preventDefault();success.style.display='none';error.style.display='none';btn.disabled=true;btn.textContent='Submitting…';
+try{const url=window.CLINICVOICE_SUPABASE_URL,key=window.CLINICVOICE_SUPABASE_ANON_KEY;if(!url||url.includes('YOUR_SUPABASE')||!key||key.includes('YOUR_SUPABASE'))throw new Error('Supabase is not configured yet');const client=window.supabase.createClient(url,key);const data=Object.fromEntries(new FormData(form).entries());const {error:dbError}=await client.from('demo_requests').insert(data);if(dbError)throw dbError;form.reset();success.style.display='block'}catch(err){console.error(err);error.style.display='block'}finally{btn.disabled=false;btn.textContent='Request my demo →'}});
+</script>
+</body></html>
