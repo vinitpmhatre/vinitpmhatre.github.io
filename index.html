@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ClinicVoice is an AI-powered receptionist for modern clinics. Handle calls, appointments, reminders and patient questions 24/7.">
+  <title>ClinicVoice — Your AI Front Desk, 24/7</title>
+  <style>
+    :root{--ink:#10233f;--muted:#607089;--brand:#2563eb;--brand2:#0ea5e9;--bg:#f7faff;--card:#fff;--line:#e5ebf3}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    a{color:inherit;text-decoration:none}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
+    .logo{font-size:24px;font-weight:800;letter-spacing:-.5px}.logo span{color:var(--brand)}.navlinks{display:flex;gap:28px;align-items:center;color:var(--muted);font-size:14px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:10px;background:var(--brand);color:white;font-weight:700;box-shadow:0 8px 22px rgba(37,99,235,.2)}.btn.secondary{background:white;color:var(--brand);border:1px solid #cfe0ff;box-shadow:none}
+    .hero{padding:92px 7% 80px;background:radial-gradient(circle at 80% 15%,#dff3ff 0,transparent 32%),linear-gradient(135deg,#eff6ff 0,#fff 60%)}.hero-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.eyebrow{display:inline-block;padding:7px 12px;border-radius:999px;background:#e8f1ff;color:#1d4ed8;font-size:13px;font-weight:800;margin-bottom:18px}.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-3px;margin:0 0 22px}.hero h1 span{color:var(--brand)}.hero p{font-size:19px;color:var(--muted);max-width:650px;margin:0 0 30px}.actions{display:flex;gap:14px;flex-wrap:wrap}.visual{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 25px 70px rgba(28,67,120,.12)}.window{border-radius:16px;background:#f5f8fc;padding:18px}.window-top{display:flex;gap:7px;margin-bottom:18px}.dot{width:9px;height:9px;border-radius:50%;background:#cbd5e1}.call{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px}.call strong{display:block;margin-bottom:5px}.pill{display:inline-block;background:#dcfce7;color:#166534;border-radius:999px;padding:4px 9px;font-size:11px;font-weight:800}
+    section{padding:80px 7%}.section-head{max-width:720px;margin:0 auto 45px;text-align:center}.section-head h2{font-size:38px;letter-spacing:-1.3px;margin:0 0 12px}.section-head p{color:var(--muted);margin:0}.grid{max-width:1120px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:28px}.icon{font-size:30px;margin-bottom:12px}.card h3{margin:0 0 8px;font-size:20px}.card p{color:var(--muted);margin:0}.steps{background:white}.step{position:relative}.number{font-size:13px;font-weight:800;color:var(--brand);margin-bottom:12px}.cta{padding:90px 7%;background:linear-gradient(135deg,#0f2f62,#164e9a);color:white;text-align:center}.cta h2{font-size:42px;letter-spacing:-1px;margin:0 0 12px}.cta p{max-width:650px;margin:0 auto 28px;color:#dbeafe}.cta .btn{background:white;color:#1753a6;box-shadow:none}.footer{padding:30px 7%;display:flex;justify-content:space-between;gap:20px;background:#0b1930;color:#a9b8cc;font-size:13px}.footer strong{color:white}
+    @media(max-width:820px){.navlinks{display:none}.hero-inner{grid-template-columns:1fr}.hero{padding-top:65px}.grid{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}.footer{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo">Clinic<span>Voice</span></div>
+    <div class="navlinks"><a href="#features">Features</a><a href="#how">How it works</a><a href="#contact">Contact</a><a class="btn" href="mailto:hello@clinicvoice.me">Book a Demo</a></div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">AI-powered clinic front desk</div>
+          <h1>Your clinic's <span>AI receptionist</span>, 24/7.</h1>
+          <p>ClinicVoice helps clinics handle patient calls, appointment requests, reminders and common questions — without making patients wait.</p>
+          <div class="actions"><a class="btn" href="mailto:hello@clinicvoice.me">Book a Demo</a><a class="btn secondary" href="#features">See how it works</a></div>
+        </div>
+        <div class="visual" aria-label="ClinicVoice AI receptionist preview">
+          <div class="window">
+            <div class="window-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+            <div class="call"><strong>📞 Incoming patient call</strong><span class="pill">AI handling</span></div>
+            <div class="call"><strong>Appointment requested</strong><span style="color:#607089;font-size:13px">Tomorrow · 10:30 AM</span></div>
+            <div class="call"><strong>Reminder scheduled</strong><span style="color:#607089;font-size:13px">WhatsApp confirmation ready</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="section-head"><h2>A smarter front desk for every clinic</h2><p>Automate repetitive front-desk work while keeping your team focused on patients.</p></div>
+      <div class="grid">
+        <article class="card"><div class="icon">📞</div><h3>AI Phone Receptionist</h3><p>Answer routine patient calls and capture appointment requests around the clock.</p></article>
+        <article class="card"><div class="icon">📅</div><h3>Appointment Automation</h3><p>Collect patient details, handle booking requests and reduce front-desk back-and-forth.</p></article>
+        <article class="card"><div class="icon">💬</div><h3>WhatsApp Follow-ups</h3><p>Send confirmations and reminders so fewer appointments are missed.</p></article>
+        <article class="card"><div class="icon">🌐</div><h3>Multilingual Support</h3><p>Make patient communication easier with support for English and Indian languages.</p></article>
+        <article class="card"><div class="icon">⏱️</div><h3>24/7 Availability</h3><p>Patients can reach your clinic even when the physical front desk is closed.</p></article>
+        <article class="card"><div class="icon">📊</div><h3>Front-desk Insights</h3><p>Understand call volume, requests and recurring patient questions as you scale.</p></article>
+      </div>
+    </section>
+
+    <section id="how" class="steps">
+      <div class="section-head"><h2>How ClinicVoice works</h2><p>Simple for clinics. Natural for patients.</p></div>
+      <div class="grid">
+        <article class="card step"><div class="number">01 — CONNECT</div><h3>Connect your clinic</h3><p>Set up your clinic information, hours, services and appointment workflow.</p></article>
+        <article class="card step"><div class="number">02 — ASSIST</div><h3>ClinicVoice handles requests</h3><p>The AI receptionist answers routine questions and captures what each patient needs.</p></article>
+        <article class="card step"><div class="number">03 — FOLLOW UP</div><h3>Keep patients informed</h3><p>Confirm requests and send reminders so your team spends less time on repetitive tasks.</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="cta"><h2>Ready to modernize your clinic's front desk?</h2><p>See how ClinicVoice can help your clinic respond faster and automate routine patient communication.</p><a class="btn" href="mailto:hello@clinicvoice.me">Book a Demo</a></section>
+  </main>
+
+  <footer class="footer"><div><strong>ClinicVoice</strong> — AI front desk for modern clinics.</div><div>© 2026 ClinicVoice</div></footer>
+</body>
+</html>
